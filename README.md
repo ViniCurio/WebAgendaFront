@@ -1,28 +1,38 @@
-# WebAgendaFront
+﻿# WebAgendaFront
 
-Aplica��o front-end em React + Vite para o sistema WebAgenda.
+Aplicação front-end em React + Vite para o sistema WebAgenda.
 
-## Vis�o geral
+## Visão geral
 
-Este projeto � a interface do usu�rio para agendamento de clientes. Ele consome o backend dispon�vel no reposit�rio `WebAgendaBack`, que fornece a API para listar, criar e excluir agendamentos.
+Este projeto é a interface do usuário para agendamento de clientes. Ele consome o backend disponível no repositório `WebAgendaBack`, que fornece a API para listar, criar e excluir agendamentos.
 
-> Importante: � necess�rio clonar e executar tamb�m o reposit�rio `WebAgendaBack` para que esta aplica��o funcione corretamente.
+> Importante: é necessário clonar e executar também o repositório `WebAgendaBack` para que esta aplicação funcione corretamente.
 
-## Pr�-requisitos
+## Pré-requisitos
 
-- Node.js instalado (vers�o 18+ recomendada)
+- Node.js instalado (versão 18+ recomendada)
 - npm
-- Backend `WebAgendaBack` em execu��o
+- Backend `WebAgendaBack` em execução
 
 ## Como usar
 
-1. Clone este reposit�rio frontend:
+1. Clone este repositório frontend:
+
+```bash
+git clone <url-do-repositorio-frontend>
+cd WebAgendaFront
+```
 
 2. Clone o backend (`WebAgendaBack`) em outra pasta:
 
-3. Instale as depend�ncias do backend e execute-o conforme as instru��es do reposit�rio `WebAgendaBack`.
+```bash
+git clone <url-do-repositorio-backend>
+cd WebAgendaBack
+```
 
-4. Volte para o frontend e instale as depend�ncias:
+3. Instale as dependências do backend e execute-o conforme as instruções do repositório `WebAgendaBack`.
+
+4. Volte para o frontend e instale as dependências:
 
 ```bash
 cd ../WebAgendaFront
@@ -41,11 +51,11 @@ npm run dev
 http://localhost:5173
 ```
 
-## Configura��o do backend
+## Configuração do backend
 
-O front-end est� configurado para usar a API em `http://localhost:3030/`.
+O front-end está configurado para usar a API em `http://localhost:3030/`.
 
-O arquivo de configura��o �:
+O arquivo de configuração é:
 
 - `src/services/api.ts`
 
@@ -57,19 +67,27 @@ Se o backend estiver em outra porta ou URL, atualize o valor de `baseURL` em `sr
 - Listar agendamentos ordenados por data
 - Excluir agendamentos
 
-## Scripts dispon�veis
+## Scripts disponíveis
 
-- `npm run dev` - inicia o servidor de desenvolvimento
-- `npm run build` - gera a vers�o de produ��o
-- `npm run preview` - pr�-visualiza o build localmente
+- `npm run dev` — inicia o servidor de desenvolvimento
+- `npm run build` — gera a versão de produção
+- `npm run preview` — pré-visualiza o build localmente
 
 ## Estrutura principal do projeto
 
-- `src/App.tsx` - l�gica principal do front-end
-- `src/services/api.ts` - cliente Axios para a API do backend
-- `src/index.css` - estilos globais
-- `tailwind.config.js` - configura��o do Tailwind CSS
+- `src/App.tsx` — lógica principal do front-end
+- `src/services/api.ts` — cliente Axios para a API do backend
+- `src/index.css` — estilos globais
+- `tailwind.config.js` — configuração do Tailwind CSS
 
+## Observações
 
+- Sem o backend `WebAgendaBack`, a aplicação não conseguirá buscar, criar ou excluir agendamentos.
+- O backend deve expor os seguintes endpoints usados pelo front-end:
+  - `GET /agenda`
+  - `POST /agendamento`
+  - `DELETE /agenda`
 
+## Dica
 
+Se o backend estiver rodando em outra máquina ou porta, atualize o `baseURL` em `src/services/api.ts` antes de iniciar o front-end.

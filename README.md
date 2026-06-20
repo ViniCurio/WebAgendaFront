@@ -80,14 +80,4 @@ Se o backend estiver em outra porta ou URL, atualize o valor de `baseURL` em `sr
 - `src/index.css` — estilos globais
 - `tailwind.config.js` — configuração do Tailwind CSS
 
-## Observações
 
-- Sem o backend `WebAgendaBack`, a aplicação não conseguirá buscar, criar ou excluir agendamentos.
-- O backend deve expor os seguintes endpoints usados pelo front-end:
-  - `GET /agenda`
-  - `POST /agendamento`
-  - `DELETE /agenda`
-
-## Dica
-
-Se o backend estiver rodando em outra máquina ou porta, atualize o `baseURL` em `src/services/api.ts` antes de iniciar o front-end.
